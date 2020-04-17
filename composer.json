@@ -1,0 +1,21 @@
+{
+    "name": "simoes/api_rest_php",
+    "description": "a simple api using php",
+    "type": "project",
+    "require": {
+        "coffeecode/datalayer": "1.1.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guilherme Giacomo Simoes",
+            "email": "trintaeoitogc@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+    	"psr-4" : {
+		"Source\\": "source/"
+	}
+    }
+}
