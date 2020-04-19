@@ -1,4 +1,4 @@
-<? php
+<?php
 	define("DATA_LAYER_CONFIG", [
 	    "driver" => "mysql",
 	    "host" => "localhost",
@@ -11,6 +11,7 @@
         	PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 	        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
         	PDO::ATTR_CASE => PDO::CASE_NATURAL
-    	]
-]);
+	     ]
+
+	]);
 ?>
