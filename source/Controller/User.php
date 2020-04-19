@@ -3,6 +3,7 @@ namespace Source\Controllers;
 
 require "../../vendor/autoload.php";
 require "../Config.php";
+include "../Model/Validations.php";
 
 switch($_SERVER["REQUEST_METHOD"]){
 	case "POST":
