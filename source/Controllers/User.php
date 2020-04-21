@@ -35,19 +35,23 @@ switch($_SERVER["REQUEST_METHOD"]){
 		if(count($errors)>0){
 			header("HTTP/1.1 400 Bad request");
 			echo json_encode(array("response" => "ha campos invalidos no formulario", 
-						"fields"=>$errors));
+					       "fields"   => $errors));
 			exit;
 		}
 
 		$user = new User();
 		$user->first_name = $data->first_name;
-		$user->last_name = $data->last_name;
-		$user->email = $data->email;
-		$user->save();
+		$user->last_name  = $data->last_name;
+		$user->email      = $data->email;
+
+		echo $user->save() 
+			?  "savo com sucesso"
+			:  "erro ao salvar";
 
 		if($user->fail()){
 			header("HTTP/1.1 500 internal server error");
 			echo json_encode(array( "response" => $user->fail()->getMessage() ));	
+			exit;
 		}
 	
 		break;
