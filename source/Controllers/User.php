@@ -43,11 +43,8 @@ switch($_SERVER["REQUEST_METHOD"]){
 		$user->first_name = $data->first_name;
 		$user->last_name  = $data->last_name;
 		$user->email      = $data->email;
-
-		echo $user->save() 
-			?  "savo com sucesso"
-			:  "erro ao salvar";
-
+		$user->save(); 
+	
 		if($user->fail()){
 			header("HTTP/1.1 500 internal server error");
 			echo json_encode(array( "response" => $user->fail()->getMessage() ));	
